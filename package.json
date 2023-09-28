@@ -1,0 +1,36 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "A simple but handy chat app with Socket.io and Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node -e js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoseinabedi/chat-app.git"
+  },
+  "keywords": [
+    "chat-app",
+    "chat",
+    "socket.io"
+  ],
+  "author": "Hossein Abedi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoseinabedi/chat-app/issues"
+  },
+  "homepage": "https://github.com/hoseinabedi/chat-app#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}

@@ -5,7 +5,7 @@ require('dotenv').config();
 const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server running on  http://localhost:${port}`);
 });
 
 app.get('/', (req, res) => {
@@ -14,8 +14,11 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-    socket.emit('message', {Hossein: 'hey how are you doing?'});
-    socket.on('another event', (data) => {
-        console.log(data);
-    });
+    socket.on('message', () => {
+        
+    }
+    // socket.emit('message', {Hossein: 'hey how are you doing?'});
+    // socket.on('another event', (data) => {
+    //     console.log(data);
+    // });
 });

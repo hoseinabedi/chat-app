@@ -12,10 +12,20 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('message', (msg) => {
-        console.log(`message: ${msg}`);
-        io.emit('message', msg);
+// tech namespaces
+const tech = io.of('/tech');
+
+tech.on('connection', (socket) => {
+    socket.on('join', (data) => {
+        socket.join(data.room);
+        tech.in(data.room).emit('message', `New user joined ${data.room} room!`);
+    });
+    socket.on('message', (data) => {
+        console.log(`message: ${data.msg}`);
+        tech.in(data.room).emit('message', data.msg);
+    });
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+        tech.emit('message', 'user disconnected');
     });
 });

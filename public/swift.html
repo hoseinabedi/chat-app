@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <form id="chatbox" action="" >
+                <form id="chatbox" action="">
                     <div class="input-group">
                         <input id="message" type="text" class="form-control" placeholder="Message ..." aria-label="Message ..." aria-describedby="send-message"/>
                         <button class="btn btn-outline-secondary" type="submit" id="send-message">Send</button>
@@ -50,7 +50,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const room = 'javascript';
+        const room = 'swift';
         const socket = io('/tech');
         $("form").submit(() => {
             let msg = $('#message').val();
